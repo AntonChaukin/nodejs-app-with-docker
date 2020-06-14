@@ -26,6 +26,7 @@
     "jest": "^26.0.1"
   },
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "redis": "^3.0.2"
   }
 }
