@@ -7,7 +7,10 @@
     "start": "node app.js",
     "docker-start": "docker-compose up -d --build",
     "docker-stop": "docker-compose down",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
