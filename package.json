@@ -4,7 +4,11 @@
   "description": "A simple NodeJS app",
   "main": "index.js",
   "scripts": {
-    "start": "node idex.js",
+    "start": "node index.js",
+    "docker-build": "docker build -t achaukin/simple-node-app:latest .",
+    "docker-run": "docker run --name node-app achaukin/simple-node-app",
+    "docker-start": "npm run docker-build && npm run docker-run",
+    "docker-stop": "docker stop node-app && docker system prune -f",
     "test": "echo \"No test specified\" && exit 0"
   },
   "repository": {
