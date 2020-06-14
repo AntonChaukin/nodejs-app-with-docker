@@ -4,7 +4,7 @@
   "description": "A simple NodeJS app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit success"
+    "test": "echo \"No test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
