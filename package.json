@@ -2,10 +2,10 @@
   "name": "nodejs-app-with-docker",
   "version": "1.0.0",
   "description": "A simple NodeJS app",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "docker-start": "docker-compose up -d",
+    "start": "node app.js",
+    "docker-start": "docker-compose up -d --build",
     "docker-stop": "docker-compose down",
     "test": "echo \"No test specified\" && exit 0"
   },
