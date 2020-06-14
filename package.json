@@ -4,6 +4,7 @@
   "description": "A simple NodeJS app",
   "main": "index.js",
   "scripts": {
+    "start": "node idex.js",
     "test": "echo \"No test specified\" && exit 0"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "devDependencies": {
     "axios": "^0.19.2",
     "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "express": "*"
   }
 }
