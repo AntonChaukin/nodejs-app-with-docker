@@ -2,22 +2,34 @@
   "name": "nodejs-app-with-docker",
   "version": "1.0.0",
   "description": "A simple NodeJS app",
-  "main": "app.js",
   "engines": {
     "node": ">=10.0.0"
   },
   "scripts": {
-    "react-start": "react-scripts start",
+    "start": "PUBLIC_URL=/ react-scripts start",
     "build": "react-scripts build",
-    "start": "node app.js",
+    "test": "react-scripts test",
+    "node-app-start": "node app.js",
     "docker-start": "docker-compose up -d --build",
     "docker-stop": "docker-compose down",
-    "test": "jest",
+    "jest-test": "jest",
     "eject": "react-scripts eject",
-    "lint": "eslint"
+    "lint": "eslint ./test"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testTimeout": 100000,
+    "verbose": true,
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,21 +60,25 @@
     "axios": "^0.19.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "jest": "^26.0.1",
-    "react-test-renderer": "^16.13.1",
-    "eslint": "^7.4.0",
+    "eslint": "^6.8.0",
+    "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jest-formatting": "^2.0.0",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.7",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.13.1"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "express": "*",
     "redis": "^3.0.2"
   }
 }
