@@ -2,4 +2,7 @@ FROM node:alpine
 
 WORKDIR '/app'
 
-CMD ["npm", "run", "react-start"]
+COPY package.json .
+RUN npm install
+
+CMD ["npm", "run", "start"]
