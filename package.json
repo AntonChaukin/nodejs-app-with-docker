@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A simple NodeJS app",
   "main": "app.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "scripts": {
     "react-start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,7 +13,8 @@
     "docker-start": "docker-compose up -d --build",
     "docker-stop": "docker-compose down",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint"
   },
   "jest": {
     "testEnvironment": "node"
@@ -45,7 +49,11 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^26.0.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "eslint": "^7.4.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jest-formatting": "^2.0.0",
+    "eslint-plugin-node": "^11.1.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
