@@ -17,14 +17,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./test"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "testTimeout": 100000,
-    "verbose": true,
-    "moduleDirectories": [
-      "node_modules"
-    ]
-  },
   "babel": {
     "presets": [
       "env",
