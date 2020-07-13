@@ -7,9 +7,11 @@
   },
   "scripts": {
     "start": "PUBLIC_URL=/ react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=/ react-scripts build",
     "test": "react-scripts test",
     "node-app-start": "node app.js",
+    "prod-build": "docker build -f Dockerfile.prod -t react-prod:1.0 .",
+    "prod-start" : "docker run --rm -p 8080:80 react-prod:1.0",
     "docker-react-start": "docker-compose -f docker-compose.dev.yml up -d --build",
     "docker-start": "docker-compose up -d --build",
     "docker-stop": "docker-compose down --remove-orphans",
