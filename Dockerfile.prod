@@ -1,0 +1,17 @@
+# Image for build phase of production
+FROM node:alpine as builder
+# Innit working directory
+WORKDIR '/app'
+# Install dependencies
+COPY package.json .
+RUN npm install
+# Copy all files from root
+COPY . .
+# Build production app
+RUN npm run build
+
+# Image for run production app
+FROM nginx
+# Copy production source from builder image
+COPY  --from=builder /app/build /usr/share/nginx/html
+
