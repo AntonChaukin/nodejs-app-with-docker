@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t achaukin/docker-nodeapp -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true achaukin/docker-nodeapp npm run test
+
+language: generic

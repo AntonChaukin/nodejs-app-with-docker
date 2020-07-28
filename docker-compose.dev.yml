@@ -4,8 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+# Map app port
     ports:
     - "3000:3000"
+# Map current root to /app into container except node_modules
     volumes:
       - /app/node_modules
       - .:/app
