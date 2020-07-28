@@ -9,3 +9,5 @@ script:
   - docker run -rm achaukin/docker-nodeapp CI=true npm run test
 
 language: node_js
+node_js:
+  - "12"
