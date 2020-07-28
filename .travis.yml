@@ -6,6 +6,6 @@ before_install:
   - docker build -t achaukin/docker-nodeapp -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true achaukin/docker-nodeapp npm run test
+  - docker run -rm achaukin/docker-nodeapp CI=true npm run test
 
-language: generic
+language: node_js
