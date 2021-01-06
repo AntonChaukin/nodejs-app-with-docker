@@ -52,7 +52,7 @@
   },
   "homepage": "https://github.com/AntonChaukin/nodejs-app-with-docker#readme",
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
