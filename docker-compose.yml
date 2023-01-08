@@ -1,10 +1,13 @@
 version: '3'
 
 services:
-  redis-server:
-    image: 'redis'
-  node-app:
+  frontend:
     restart: on-failure
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
-      - "8081:8081"
+      - "4001:3000"
+    volumes:
+      - app/node-modules
+      - .:/app
