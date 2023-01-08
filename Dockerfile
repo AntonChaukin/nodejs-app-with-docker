@@ -1,15 +1,21 @@
 #Specify a base image
-FROM node:16-alpine
+FROM node:16-alpine as builder
 
 #Specify work directory
-WORKDIR /usr/app
+WORKDIR /app
 
 #Install some dependencies
-COPY ./package.json ./
+COPY package.json .
 RUN npm install
 
 #Copy work files
-COPY ./ ./
+COPY . .
 
-#Default command
-CMD ["npm", "start"]
+#Build app
+RUN ["npm", "run", "build"]
+
+#Specify ngix base
+FROM nginx
+
+#Copy build directory to nginx work directory
+COPY --from=builder /app/build /usr/share/nginx/html
